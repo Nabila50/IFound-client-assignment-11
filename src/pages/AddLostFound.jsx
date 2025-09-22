@@ -22,7 +22,7 @@ const AddLostFound = () => {
     };
 
     axios
-      .post("http://localhost:3000/applicationForms", applicationForms)
+      .post("https://lost-found-server-six.vercel.app/applicationForms", applicationForms)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
@@ -43,7 +43,7 @@ const AddLostFound = () => {
       });
 
     axios
-      .post("http://localhost:3000/lost", updatedLostForm)
+      .post("https://lost-found-server-six.vercel.app/lost", updatedLostForm)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

@@ -10,7 +10,7 @@ const Home = () => {
   const [lostProducts, setLostProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/lost")
+    fetch("https://lost-found-server-six.vercel.app/lost")
       .then((res) => res.json())
       .then((data) => {
         const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date));

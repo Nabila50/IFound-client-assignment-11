@@ -37,7 +37,7 @@ const PostPage = () => {
     console.log("Recovery Info Submitted:", recoveryInfo);
 
     axios
-      .post("http://localhost:3000/recovered", recoveryInfo)
+      .post("https://lost-found-server-six.vercel.app/recovered", recoveryInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {

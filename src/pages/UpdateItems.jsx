@@ -28,7 +28,7 @@ const UpdateItems = () => {
 
 
     // send updated Itmes data to the db
-    fetch(`http://localhost:3000/lost/${_id}`, {
+    fetch(`https://lost-found-server-six.vercel.app/lost/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

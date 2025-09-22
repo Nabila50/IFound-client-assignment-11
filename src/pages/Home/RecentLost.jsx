@@ -8,7 +8,7 @@ const RecentLost = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/lost")
+    fetch("https://lost-found-server-six.vercel.app/lost")
       .then((res) => res.json())
       .then((data) => {
         setLostProducts(data);

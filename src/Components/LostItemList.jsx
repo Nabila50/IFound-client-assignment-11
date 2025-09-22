@@ -22,7 +22,7 @@ const LostItemList = ({ myProfilePromise, items, setItems }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // start deleting the API
-        fetch(`http://localhost:3000/lost/${_id}`, {
+        fetch(`https://lost-found-server-six.vercel.app/lost/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

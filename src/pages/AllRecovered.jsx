@@ -6,7 +6,7 @@ const AllRecovered = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/recoveredItems")
+    fetch("https://lost-found-server-six.vercel.app/recoveredItems")
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.error(err));

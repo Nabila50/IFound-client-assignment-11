@@ -50,22 +50,22 @@ const router = createBrowserRouter([
     },
     {
       path: 'manageMyItems',
-      loader: () => fetch(`http://localhost:3000/lost`),
+      loader: () => fetch(`https://lost-found-server-six.vercel.app/lost`),
       element: <PrivateRoute><ManageMyItems></ManageMyItems></PrivateRoute> 
     },
     {
       path: '/lost/:id',
-      loader: ({params}) => fetch(`http://localhost:3000/lost/${params.id}`),
+      loader: ({params}) => fetch(`https://lost-found-server-six.vercel.app/lost/${params.id}`),
       element: <PrivateRoute><DetailsPage></DetailsPage></PrivateRoute>
     },
     {
       path: 'updateItems/:id',
-      loader: ({params}) => fetch(`http://localhost:3000/lost/${params.id}`),
+      loader: ({params}) => fetch(`https://lost-found-server-six.vercel.app/lost/${params.id}`),
       element: <PrivateRoute><UpdateItems></UpdateItems></PrivateRoute>
     },
     {
       path: 'postPage',
-      loader: () => fetch(`http://localhost:3000/lost`),
+      loader: () => fetch(`https://lost-found-server-six.vercel.app/lost`),
       element: <PrivateRoute><PostPage></PostPage></PrivateRoute>
     },
 
