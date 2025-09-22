@@ -1,10 +1,21 @@
-import React, { use } from "react";
-import { Link, NavLink } from "react-router";
+import React, { use, useEffect } from "react";
+import { Link, NavLink, useLoaderData } from "react-router";
 import { AuthContext } from "../AuthContext/AuthContext";
 import Swal from "sweetalert2";
+ 
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
+  
+  // const {photoUrl} = useLoaderData();
+
+    useEffect(() => {
+      fetch("http://localhost:3000/lost")
+        .then((res) => res.json())
+        .then((data) => {
+         console.log(data) 
+        });
+    }, []);
 
   const handleSignOut = () => {
     signOutUser()
@@ -27,21 +38,22 @@ const Navbar = () => {
   };
 
   const links = (
-    <>
+    <div  className="font-bold flex  ">
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink  className="hover:bg-emerald-200" to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/postPage">Post</NavLink>
+        <NavLink  className="hover:bg-emerald-200" to="/postPage">Post</NavLink>
       </li>
       <li>
-        <NavLink to="/lostAndFound">Lost & Found</NavLink>
+        <NavLink  className="hover:bg-emerald-200" to="/lostAndFound">Lost & Found</NavLink>
       </li>
-    </>
+    </div>
   );
   return (
-    <div className="navbar bg-[#02C5BD] shadow-sm">
-      <div className="navbar-start">
+    <div>
+      <div className="navbar bg-[#02C5BD] shadow-sm">
+        <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -67,10 +79,9 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">
-          <img className="w-15 h-15" src="logo.png" alt="" />
-          IFound
-        </a>
+         <img className="w-15 h-15  " src="logo.png" alt="" />
+          <p className="text-2xl font-bold font-blue">IFound</p>
+         
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -83,7 +94,7 @@ const Navbar = () => {
                 tabIndex={0}
                 role="button"
                 className="w-13 h-13"
-                src="logo.png"
+                src={user.photoUrl}
                 alt=""
               />
               <ul
@@ -91,13 +102,13 @@ const Navbar = () => {
                 className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
               >
                 <li>
-                  <NavLink to="/addLostFound">Add Lost & Found</NavLink>
+                  <NavLink  className="hover:bg-emerald-200" to="/addLostFound">Add Lost & Found</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/allRecovered">All Recovered Items</NavLink>
+                  <NavLink  className="hover:bg-emerald-200" to="/allRecovered">All Recovered Items</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/manageMyItems">Manage My Items</NavLink>
+                  <NavLink  className="hover:bg-emerald-200" to="/manageMyItems">Manage My Items</NavLink>
                 </li>
               </ul>
             </div>
@@ -125,6 +136,12 @@ const Navbar = () => {
           </>
         )}
       </div>
+      </div>
+      <div>
+  
+
+      </div>
+      
     </div>
   );
 };

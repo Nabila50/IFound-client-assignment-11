@@ -20,9 +20,14 @@ const Home = () => {
 
   
   return (
-    <div className=" bg-base-300 my-15">
-      <Slider></Slider>
-      <h1 className="my-7 text-4xl text-center font-bold text-[#454C71]">
+    <div>
+      <div className="relative w-screen mx-[-70px]">
+        <Slider></Slider>
+      </div>
+      
+      <div className=" bg-base-300 my-10">
+     
+      <h1 className="my-9 text-4xl text-center font-bold text-[#454C71]">
         All Lost & Found Products
       </h1>
 
@@ -43,6 +48,9 @@ const Home = () => {
 
 
     </div>
+
+    </div>
+    
   );
 };
 

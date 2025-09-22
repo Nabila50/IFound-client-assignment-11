@@ -4,9 +4,9 @@ import { AuthContext } from "../../AuthContext/AuthContext";
 
 const DetailsPage = () => {
 
-  // const { user } = use(AuthContext);
+  const { user } = use(AuthContext);
 
-  const {_id, postType, photoUrl, title, description, category, location, date, contactInfo, name, email}= useLoaderData();
+  const {_id, postType, photoUrl, title, description, category, location, date }= useLoaderData();
    
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -23,11 +23,9 @@ const DetailsPage = () => {
           <p className="py-1"><span className="font-semibold">Post Type:</span>  {postType}  </p>
           <p className="py-1"><span className="font-semibold">Category:</span>  {category}  </p>
           <p className="py-1"><span className="font-semibold">Location:</span>  {location}  </p>
-          <p className="py-1"><span className="font-semibold">Date:</span>  {date}  </p>
-          <p className="py-1"><span className="font-semibold">Name:</span>  {contactInfo.name}  </p>
-          <p className="py-1"><span className="font-semibold">Email Id:</span>   {contactInfo.email}  </p>
-         
-          {/* <button className="btn btn-primary">Get Started</button> */}
+          <p className="py-1"><span className="font-semibold">Date:</span>  {date}  </p>        
+             
+ 
         </div>
       </div>
     </div>

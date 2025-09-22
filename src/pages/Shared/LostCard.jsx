@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router";
 
 const LostCard = ({lostProduct}) => {
 
-    const {_id, postType, photoUrl, title, description, category, location, date, contactInfo, user} = lostProduct;
+    const {_id, postType, photoUrl, title, description, category, location, date, contactInfo, name, user} = lostProduct;
 
 
 

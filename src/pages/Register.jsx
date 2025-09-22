@@ -2,13 +2,14 @@ import Lottie from "lottie-react";
 import React, { use } from "react";
 
 import registerLottie from "../assets/Login.json";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../AuthContext/AuthContext";
 import Swal from "sweetalert2";
 import SocialLogIn from "./Shared/SocialLogIn";
 
 const Register = () => {
   const { createUser } = use(AuthContext);
+   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -42,7 +43,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 2500,
         });
-
+        navigate('/');
         }
        
       })

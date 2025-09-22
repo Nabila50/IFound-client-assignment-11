@@ -19,12 +19,14 @@ const PostPage = () => {
     setShowModal(true);
   };
 
+  // ---------------------------
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const recoveryInfo = {
       itemId: selectedItem._id,
-      recoveredDate,
+      recoveredDate: recoveredDate.toISOString(),
       recoveredLocation,
       recoveredBy: {
         name: user.displayName,
@@ -60,13 +62,16 @@ const PostPage = () => {
  
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 my-15">
-      {lostItems.map((lostItem) => (
-        <div className="card bg-emerald-50 w-90 shadow-sm">
+    <div >
+      <h1 className="text-3xl text-[#454C71] font-bold text-center mt-10 mb-7">Find Your Product</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 mb-12">
+        {lostItems.map((lostItem) => {
+        return (
+          <div className="card bg-emerald-50 w-90 shadow-sm">
           <figure>
             <img className="h-60 w-90" src={lostItem.photoUrl} alt="Shoes" />
           </figure>
-          <div className="card-body">
+          <div className="card-body"> 
             <h2 className="card-title">{lostItem.title}</h2>
             <p>{lostItem.description}</p>
             <div className="card-actions justify-end">
@@ -81,7 +86,10 @@ const PostPage = () => {
 
           
         </div>
-      ))}
+        )
+      }
+       
+      )}
 
       {/* Modal */}
       {showModal && selectedItem && (
@@ -144,6 +152,9 @@ const PostPage = () => {
           </div>
         </div>
       )}
+
+      </div>
+      
  
     </div>
   );

@@ -2,9 +2,13 @@ import React, { use, useEffect, useState } from "react";
 import { MdDelete, MdSecurityUpdateGood } from "react-icons/md";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthContext/AuthContext";
 
 const LostItemList = ({ myProfilePromise, items, setItems }) => {
+  const { user } = use(AuthContext);
   const lostItems = use(myProfilePromise);
+
+  console.log(myProfilePromise, user.accessToken);
  
   const handleDelete = (_id) => {
     Swal.fire({

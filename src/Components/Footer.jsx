@@ -6,9 +6,9 @@ const Footer = () => {
   <aside>
     <img className='w-20 h-20' src="logo.png" alt="" />
     <p>
-      ACME Industries Ltd.
+      IFound Company Ltd.
       <br />
-      Providing reliable tech since 1992
+      Find your lost items
     </p>
   </aside>
   <nav>
