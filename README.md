@@ -1,12 +1,11 @@
-# React + Vite
+# Project Name: IFound
+# Purpose: It is a lost and found service website where client can post and found his/her lost items and can also find his/her product.
+# Live Link: https://velvety-selkie-b9f2df.netlify.app
+# Key Features: here I used 
+                     1. react-route which help to rerandering the website. 
+                     2. MongoDB
+                     3. Firebase Authentication
+                     4. Google Authentication
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# NPM package: 1. React DatePicker
+                2. sweetalert
